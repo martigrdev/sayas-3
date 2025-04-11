@@ -1,0 +1,165 @@
+---
+
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout>
+  <main class="main-about">
+    <h2>La Nostra Història</h2>
+    <section class="about-section">
+      <div class="about-content">
+        <p>
+            De ben jove, <strong>Lluís Sayas</strong> va descobrir la seva passió per
+            la lutieria quan va entrar com a aprenent en un prestigiós taller de Barcelona.
+            Allà va aprendre els secrets de l’ofici de la mà d’un mestre luthier, observant
+            com cada instrument prenia vida a través de les seves mans expertes. Aquella
+            experiència li va deixar una empremta profunda, despertant un amor per la
+            restauració i la construcció de violins que mai no l’abandonaria.
+        </p>
+        <p>
+            Tot i que la vida el va portar per altres camins professionals,
+            mai no va deixar enrere la seva connexió amb la lutieria. Al llarg dels
+            anys, va continuar perfeccionant les seves habilitats, treballant en
+            projectes personals i col·laborant en la restauració d’instruments per a
+            músics i col·leccionistes. L’olor de la fusta, el tacte delicat de les
+            vernissos i l’harmonia dels tons sempre el van acompanyar, recordant-li
+            la seva autèntica vocació.
+        </p>
+        <p>
+            Finalment, després d’anys de pràctica i aprenentatge constant, va
+            decidir fer realitat el seu somni i obrir el seu propi taller de
+            restauració a Vacarisses. Amb una dedicació absoluta a la recuperació
+            d’instruments antics, ofereix als músics l’oportunitat de redescobrir la
+            riquesa sonora i l’ànima dels seus violins. Així, el que va començar com
+            una passió de joventut s’ha convertit en una missió de vida: preservar
+            la bellesa i l’essència d’aquests instruments únics.
+        </p>
+      </div>
+      <div class="about-content rodona">
+        <img
+          src="/sayas-2/media/images/sayas.jfif"
+          alt="Lluís Sayas - Luthier"
+          >
+      </div>
+    </section>
+    <h2>Lluís Sayas</h2>
+    <section class="about-section artisan-section">
+        <div class="about-content rodona">
+          <img
+            src="/sayas-2/media/images/user.png"
+            alt="Lluís Sayas - Luthier"
+            
+          />
+        </div>
+        <div class="artisan-text">
+          <p>
+            La meva passió per la lutieria va començar de jove, quan vaig tenir l’oportunitat d’aprendre l’ofici com a aprenent en un taller de Barcelona. Tot i que durant anys vaig seguir altres camins, mai no vaig deixar de treballar amb violins, perfeccionant tècniques i aprofundint en l’art de la restauració. Cada instrument té una història, i la meva feina consisteix a respectar-la i donar-li una nova vida.
+          </p>
+          <p>
+            Ara, des del meu taller a Vacarisses, em dedico plenament a la restauració de violins antics. Amb paciència, precisió i respecte pels materials originals, ajudo músics i col·leccionistes a recuperar la sonoritat i la bellesa dels seus instruments. Cada restauració és un diàleg entre el passat i el present, una oportunitat per preservar l’ànima d’un violí per a les generacions futures.
+          </p>
+        </div>
+      </div>
+    </section>
+    <h2>Contacte</h2>
+    <section class="about-contacte">
+      <article class="rodona-contacte">
+        <h3>Telèfon</h3>
+        <p>934 28 30 15</p>
+      </article>
+      <article class="rodona-contacte">
+        <h3>Email</h3>
+        <p>info@tallersayas.cat</p>
+      </article>
+      <article class="rodona-contacte">
+        <h3>Adreça</h3>
+        <p>
+          C/ de la Llum, 22<br>
+          08223 Vacarisses
+        </p>
+      </article>
+    </section>
+  </main>
+</MainLayout>
+
+<style>
+  .main-about {
+    padding: 40px 15%;
+    text-align: justify;
+  }
+  .about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .about-content {
+      align-self: center;
+      justify-self: center;
+  }
+  .rodona {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #683703; 
+  }
+ .rodona img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  h2 {
+    margin-bottom: 20px;
+    color: #683703;
+  }
+  .about-contacte {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .rodona-contacte {
+    width: 250px;
+    height: 250px;
+    background-color: #683703;
+    color: white;
+    border-radius: 50%;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .about-section {
+      grid-template-columns: 1fr;
+    }
+    .about-contacte {
+      flex-direction: column;
+    }
+    .main-about {
+      padding: 20px 15px;
+    }
+    .rodona {
+      width: 250px;
+      height: 250px;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .main-about {
+      padding: 20px 5%;
+    }
+    .rodona-contacte {
+      width: 200px;
+      height: 200px;
+    }
+  }
+</style>

@@ -1,0 +1,199 @@
+---
+
+---
+
+<main class="main-scroll">
+  <section class="introduccio">
+    <img src="/sayas-2/media/images/sayas.jfif" alt="logo" />
+    <h2>Benvinguts al taller d'en Lluís Sayas</h2>
+    <p>
+      En un racó tranquil de Vacarisses, entre natura i silenci, neix un espai
+      dedicat a la bellesa, la precisió i la memòria del so: el meu taller de
+      luteria. Aquí, cada violí que arriba porta amb si una història, una veu
+      apagada pel temps que espera ser recuperada. El meu ofici consisteix a
+      escoltar aquests instruments, entendre les seves ferides i ajudar-los a
+      tornar a parlar, a cantar, a emocionar.
+    </p>
+    <p>
+      Sóc luthier especialitzat en la restauració de violins antics. No fabrico
+      en sèrie, no treballo amb presses ni segueixo modes: treballo amb les
+      mans, amb els ulls i amb les oïdes. La meva feina es basa en l’observació,
+      la paciència i el respecte per cada peça. Cada violí que restauro és únic,
+      i el procés per retornar-li la veu és gairebé un ritual.
+    </p>
+    <p>
+      Aquesta pàgina web és una invitació a conèixer el meu món i el meu treball
+      de prop. No només hi trobaràs instruments restaurats disponibles per a la
+      venda, sinó també una mirada al darrere de cada violí: el seu origen, les
+      seves particularitats, i el procés minuciós que he seguit per recuperar-ne
+      l’essència sonora i estètica.
+    </p>
+    <div class="seccions-intro">
+      <div class="section-pair">
+        <div class="rodona intro-item">
+          <img src="/sayas-2/media/images/violin-1.png" alt="v-3" />
+        </div>
+        <div class="paragraf-intro intro-item">
+          <p>
+            A la secció de <strong>Violins</strong>, podràs explorar els violins
+            disponibles, amb fotografies detallades i descripcions tècniques.
+            Cada instrument ve acompanyat de notes sobre la seva restauració i,
+            quan és possible, mostres de so per sentir com respira i vibra un
+            cop recuperat.
+          </p>
+        </div>
+      </div>
+      <div class="section-pair">
+        <div class="paragraf-intro intro-item one-intro-item">
+          <p>
+            També podràs conèixer en profunditat el <strong
+              >procés de restauració</strong
+            >, un viatge que va des de la revisió inicial fins a l'ajustament
+            acústic final. A través de textos i imatges, et mostraré les
+            diferents fases del treball i la dedicació que comporta tornar un
+            violí al seu estat òptim, tant visualment com sonorament.
+          </p>
+        </div>
+        <div class="rodona intro-item two-intro-item">
+          <img src="/sayas-2/media/images/res-1.jpg" alt="v-3" />
+        </div>
+      </div>
+      <div class="section-pair">
+        <div class="rodona intro-item">
+          <img src="/sayas-2/media/images/violin-1.png" alt="v-3" />
+        </div>
+        <div class="paragraf-intro intro-item">
+          <p>
+            El meu objectiu no és només vendre instruments, sinó compartir la
+            bellesa de la luteria artesanal, i fer arribar a músics i amants del
+            violí peces amb ànima, memòria i futur. Si tens qualsevol dubte,
+            vols veure els instruments en persona o parlar del que estàs
+            buscant, estic a la teva disposició.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <h2>Últims projectes</h2>
+</main>
+
+<style>
+  .main-scroll h2 {
+    color: #cdb49a;
+  }
+  .introduccio {
+  }
+
+  .introduccio p {
+    margin: 20px 0;
+    text-align: justify;
+  }
+
+  .introduccio h1 {
+    color: #412202;
+  }
+  .introduccio img {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+  }
+  .seccions-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 60px 0px;
+  }
+
+  .section-pair {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    align-items: center;
+  }
+
+  .paragraf-intro {
+    grid-column: span 2;
+  }
+
+  .rodona {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #cdb49a;
+  }
+
+  .rodona img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .seccions-intro > * {
+    opacity: 0;
+    animation-name: fadeUp;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+  }
+
+  .seccions-intro > * {
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
+  }
+  one-intro-item {
+    order: 1;
+  }
+  .two-intro-item {
+    order: 2;
+  }
+
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .seccions-intro {
+      grid-template-columns: 1fr;
+    }
+    .intro-item {
+      grid-column: 1;
+    }
+    .contacte-intro,
+    .violins-intro,
+    .restauracio-intro {
+      width: 200px;
+      justify-self: center;
+    }
+    .introduccio img {
+      width: 80%;
+    }
+    .one-intro-item {
+      order: 2;
+    }
+    .two-intro-item {
+      order: 1;
+    }
+    .section-pair {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .rodona {
+      width: 200px;
+      height: 200px;
+      justify-self: center;
+    }
+  }
+</style>

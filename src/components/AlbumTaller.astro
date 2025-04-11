@@ -1,0 +1,247 @@
+---
+
+---
+
+<article>
+  <div class="container">
+    <!-- BUTTONS (input/labels) -->
+    <input
+      type="radio"
+      name="slider"
+      id="slide-1-trigger"
+      class="trigger"
+      checked
+    />
+    <label class="btn slide-1" for="slide-1-trigger"></label>
+    <input type="radio" name="slider" id="slide-2-trigger" class="trigger" />
+    <label class="btn" for="slide-2-trigger"></label>
+    <input type="radio" name="slider" id="slide-3-trigger" class="trigger" />
+    <label class="btn" for="slide-3-trigger"></label>
+    <input type="radio" name="slider" id="slide-4-trigger" class="trigger" />
+    <label class="btn" for="slide-4-trigger"></label>
+
+    <!-- SLIDES -->
+    <div class="slide-wrapper">
+      <div id="slide-role">
+        <div class="slide slide-1"></div>
+        <div class="slide slide-2"></div>
+        <div class="slide slide-3"></div>
+        <div class="slide slide-4"></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+  /*==================
+    Base Styles
+===================*/
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .container {
+    background: rgb(255, 255, 255);
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .slide-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  /*==================
+    Slides
+===================*/
+
+  #slide-role {
+    background: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 100%;
+    z-index: 100;
+    transition: left 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    /* flex */
+    display: flex;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* backgrounds */
+
+  .slide-1 {
+    background-image: url("/sayas-2/media/images/res-1.jpg");
+  }
+
+  .slide-2 {
+    background-image: url("/sayas-2/media/images/res-2.webp");
+  }
+
+  .slide-3 {
+    background-image: url("/sayas-2/media/images/res-3.jpg");
+  }
+
+  .slide-4 {
+    background-image: url("/sayas-2/media/images/res-4.jpg");
+  }
+
+  /*===================
+    BUTTONS
+====================*/
+
+  .btn,
+  .btn::after {
+    border-radius: 50%;
+    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+
+  .btn {
+    border: 5px solid #834504;
+    position: absolute;
+    bottom: 30px;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    transform: scale(1.1);
+    z-index: 1000;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .btn:nth-of-type(1) {
+    left: 15%;
+    background-image: url("/sayas-2/media/images/res-1.jpg");
+  }
+
+  .btn:nth-of-type(2) {
+    left: 35%;
+    background-image: url("/sayas-2/media/images/res-2.webp");
+  }
+
+  .btn:nth-of-type(3) {
+    left: 55%;
+    background-image: url("/sayas-2/media/images/res-3.jpg");
+  }
+
+  .btn:nth-of-type(4) {
+    left: 75%;
+    background-image: url("/sayas-2/media/images/res-4.jpg");
+  }
+
+  .btn:hover {
+    transform: scale(1.4);
+  }
+
+  /* buttons Atom! */
+
+  .btn::after {
+  }
+
+  /*====================
+        L O G I C 
+ ===================*/
+
+  /* slide logic */
+
+  input[type="radio"]:checked#slide-2-trigger
+    ~ div.slide-wrapper
+    > div#slide-role {
+    left: -100%;
+  }
+
+  input[type="radio"]:checked#slide-3-trigger
+    ~ div.slide-wrapper
+    > div#slide-role {
+    left: -200%;
+  }
+
+  input[type="radio"]:checked#slide-4-trigger
+    ~ div.slide-wrapper
+    > div#slide-role {
+    left: -300%;
+  }
+
+  /* button logic */
+
+  input[type="radio"]:checked + label.btn {
+    transform: scale(1.3);
+  }
+
+  input[type="radio"]:checked + label.btn::after {
+    transform: scale(1.1, 1.1);
+    background: lightskyblue;
+  }
+
+  /*=====================================================================================
+                MEDIA QUERIES
+=======================================================================================*/
+
+  @media only screen and (max-width: 767px) {
+    .container {
+      height: 60vh;
+    }
+    .slide-wrapper {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 0;
+    }
+    .btn {
+      width: 60px;
+      height: 60px;
+      border-width: 3px;
+    }
+    .btn:nth-of-type(1) {
+      right: 20px;
+      left: auto;
+      bottom: 65%;
+    }
+    .btn:nth-of-type(2) {
+      right: 20px;
+      left: auto;
+      bottom: 45%;
+    }
+    .btn:nth-of-type(3) {
+      right: 20px;
+      left: auto;
+      bottom: 25%;
+    }
+    .btn:nth-of-type(4) {
+      right: 20px;
+      left: auto;
+      bottom: 5%;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    .container {
+      height: 50vh;
+    }
+    .btn {
+      width: 45px;
+      height: 45px;
+      border-width: 2px;
+    }
+    .btn:nth-of-type(1),
+    .btn:nth-of-type(2),
+    .btn:nth-of-type(3),
+    .btn:nth-of-type(4) {
+      right: 10px;
+    }
+  }
+</style>

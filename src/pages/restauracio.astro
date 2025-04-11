@@ -1,0 +1,187 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import AlbumTaller from "../components/AlbumTaller.astro";
+---
+
+<MainLayout>
+  <main class="main-restauracio">
+    <section class="intro-restauracio">
+      <h2>Procés de Restauració</h2>
+      <div class="container">
+        <div class="container-item">
+          <p>
+            La restauració d’un violí és un procés delicat i profundament respectuós amb la història de cada instrument. Cada violí és únic, amb les seves marques, el seu passat i una veu pròpia que pot haver quedat en silenci amb el pas del temps. Des del nostre taller, treballem per recuperar-ne l’estructura i l’acústica original, sense esborrar-ne el caràcter ni les petjades que li donen identitat.
+          </p>
+        
+          <p>
+            L’anàlisi inicial ens permet detectar esquerdes, deformacions o desgast, i planificar una intervenció acurada. Utilitzem tècniques de luteria tradicionals, materials nobles i coles reversibles que garanteixen una restauració duradora i fidel a l’essència de l’instrument. En molts casos, cal desmuntar-lo parcialment per treballar amb precisió, sempre amb l’objectiu de conservar al màxim les parts originals.
+          </p>
+        
+          <p>
+            Més enllà de la part estructural, també cuidem amb detall l’aspecte sonor: l’ajust de l’ànima, el pont, les clavilles i la calibració general són essencials perquè el violí torni a cantar amb plenitud. Cada restauració és una nova oportunitat de vida per a l’instrument, i veure’l tornar a sonar a les mans d’un músic és, sens dubte, la millor recompensa.
+          </p>
+        
+        </div>
+        <div class="container-item">
+          <div class="video-wrapper">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/DW1AQDNzMRE?si=KMmAg4ZK8Sc3XmkO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <section class="process-section">
+      <div class="process-step">
+        <div class="rodona">
+          <img
+            src="/sayas-2/media/images/res-1.jpg"
+            alt="Primera fase de restauració"
+            class="process-image"
+          />
+        </div>
+        <div class="step-content">
+          <h2>Avaluació Inicial</h2>
+          <p>
+            El primer pas és una avaluació detallada de l'estat de l'instrument.
+            Examinem cada component del violí per identificar danys
+            estructurals, desgast i reparacions anteriors. Aquesta anàlisi ens
+            permet desenvolupar un pla de restauració específic.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="rodona">
+          <img
+            src="/sayas-2/media/images/res-4.jpg"
+            alt="Segona fase de restauració"
+            class="process-image"
+          />
+          </div>
+        <div class="step-content">
+          <h2>Restauració i Reparació</h2>
+          <p>
+            Durant el procés de restauració, treballem amb materials
+            tradicionals i tècniques artesanals. Reparem esquerdes, substituïm
+            peces deteriorades i restaurem el vernís original amb cura extrema
+            per mantenir l'autenticitat de l'instrument.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="rodona">
+          <img
+            src="/sayas-2/media/images/res-3.jpg"
+            alt="Tercera fase de restauració"
+            class="process-image"
+          />
+        </div>
+        
+        <div class="step-content">
+          <h2>Ajustament i Acabat</h2>
+          <p>
+            La fase final inclou l'ajustament precís de tots els components per
+            optimitzar la sonoritat. Ajustem el pont, l'ànima i les clavilles, i
+            realitzem proves acústiques exhaustives per garantir que
+            l'instrument recuperi la seva veu característica.
+          </p>
+        </div>
+      </div>
+    </section>
+    <AlbumTaller />
+  </main>
+</MainLayout>
+
+<style>
+  .main-restauracio {
+    margin: auto;
+    padding: 40px 15%;
+  }
+
+  h2 {
+    color: #834504;
+    text-align: left;
+  }
+
+  .intro-restauracio {
+    text-align: justify;
+    margin-bottom: 40px;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .rodona {
+    width: 300px;
+    height: 300px;
+    padding: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #a87c4f;
+    justify-self: center;
+  }
+
+  .rodona img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .process-step {
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .process-section {
+    text-align: justify;
+  }
+  
+
+  @media (max-width: 768px) {
+    .main-restauracio {
+      padding: 20px 15px;
+    }
+
+    .process-section {
+      text-align: left;
+    }
+
+   .container {
+      grid-template-columns: 1fr;
+    }
+
+    .process-step {
+      grid-template-columns: 1fr;
+    }
+
+  }
+</style>

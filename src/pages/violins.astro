@@ -1,0 +1,156 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Violi from "../components/Violi.astro";
+
+const violins = [
+  {
+    nom: "Violí Roth",
+    fabricacio: "1920",
+    descripcio:
+      "Aquest violí dels anys 20 representa l'excel·lència de la luteria moderna primerenca. Construït durant el període d'entreguerres, exhibeix una fusió única entre les tècniques tradicionals i les innovacions del segle XX. La seva fusta seleccionada acuradament i el seu vernís de qualitat excepcional produeixen un to càlid i profund, especialment notable en els registres mitjans. La seva història reflecteix l'evolució de la música clàssica durant una època de grans canvis culturals.",
+    imatge: "/sayas-2/media/images/violin-1.png",
+    estat: "En restauració",
+  },
+  {
+    nom: "Violí Paul Blanchard",
+    fabricacio: "1894",
+    descripcio:
+      "Un exemplar excepcional del final del segle XIX, aquest violí mostra l'apogeu de la luteria romàntica. La seva construcció meticulosa segueix els principis establerts per les grans escoles italianes, adaptats als gustos musicals de l'època. La seva veu és particularment adequada per al repertori romàntic, amb una projecció impressionant i una riquesa tonal que el fa destacar en sales de concert. La seva fusta ha madurat perfectament al llarg de més de 125 anys.",
+    imatge: "/sayas-2/media/images/violin-2.png",
+    estat: "Restaurat",
+  },
+  {
+    nom: "Violí Lorenzo Storioni",
+    fabricacio: "1789",
+    descripcio:
+      "Aquest violí del període clàssic és un tresor històric que va néixer l'any de la Revolució Francesa. La seva construcció reflecteix l'elegància i la precisió de l'època de Mozart. La fusta d'auró i avet utilitzada ha desenvolupat qualitats acústiques extraordinàries amb el pas dels segles. El seu so brillant i refinat és ideal per a la interpretació de música del període clàssic, amb una claredat i articulació excepcionals.",
+    imatge: "/sayas-2/media/images/violin-3.png",
+    estat: "Restaurat",
+  },
+  {
+    nom: "Violí W.E. Hill & Sons",
+    fabricacio: "1972",
+    descripcio:
+      "Aquest violí dels anys 70 exemplifica la precisió de la luteria contemporània. Construït amb tècniques modernes però respectant els cànons tradicionals, ofereix una combinació perfecta entre fiabilitat i expressivitat. La seva projecció potent i el seu to equilibrat el fan especialment versàtil, adaptant-se tant a la música de cambra com a les actuacions com a solista. La seva resposta immediata i la seva estabilitat tonal són característiques molt apreciades.",
+    imatge: "/sayas-2/media/images/violin-6.png",
+    estat: "Restaurat",
+  },
+  {
+    nom: "Violí Andrea Guarneri",
+    fabricacio: "1672",
+    descripcio:
+      "Una joia excepcional del període daurat de la luteria, aquest violí del segle XVII és contemporani dels grans mestres de Cremona. La seva construcció artesanal mostra la perfecció assolida durant l'època d'or dels instruments de corda. El seu so, madurat al llarg de més de tres segles, posseeix una dolçor i una profunditat incomparables. La seva fusta antiga i el seu vernís original són testimonis vius de la història de la música.",
+    imatge: "/sayas-2/media/images/violin-1.png",
+    estat: "Restaurat",
+  },
+  {
+    nom: "Violí Heinrich Theodor Heberlein",
+    fabricacio: "1871",
+    descripcio:
+      "Aquest violí de l'època romàntica tardana exemplifica l'excel·lència de la luteria europea del segle XIX. Construït durant l'època de Wagner i Brahms, el seu so potent i expressiu reflecteix les demandes musicals del període. La seva construcció robusta i el seu disseny elegant combinen la tradició amb les innovacions de l'època. La qualitat de la seva fusta i el seu vernís han madurat perfectament, oferint un to ric en harmònics.",
+    imatge: "/sayas-2/media/images/violin-3.png",
+    estat: "Restaurat",
+  },
+];
+---
+
+<MainLayout>
+  <main class="main-violins">
+    {
+      violins.map((violin) => (
+        <Violi
+          nom={violin.nom}
+          fabricacio={violin.fabricacio}
+          descripcio={violin.descripcio}
+          imatge={violin.imatge}
+          estat={violin.estat}
+        />
+      ))
+    }
+    <button id="back-to-top" class="back-to-top" aria-label="Tornar a dalt">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6"></path>
+      </svg>
+    </button>
+  </main>
+</MainLayout>
+
+<script>
+  const backToTopButton = document.getElementById("back-to-top");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.add("show");
+    } else {
+      backToTopButton.classList.remove("show");
+    }
+  });
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<style>
+  main.main-violins {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15%;
+  }
+
+
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: rgba(168,124,79, 0.5);
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .back-to-top svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .back-to-top:hover {
+    background-color: rgba(168,124,79, 0.8);
+    transform: translateY(-3px);
+  }
+
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (max-width: 768px) {
+    main.main-violins {
+      padding: 20px 15px;
+    }
+  }
+  
+</style>

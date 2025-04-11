@@ -1,0 +1,28 @@
+---
+import ScrollComponent from "../components/ScrollComponent.astro";
+import ViolinSlider from "../components/ViolinSlider.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout>
+  <main class="main-index">
+  <ScrollComponent />
+  
+  </main>
+  <ViolinSlider />
+</MainLayout>
+
+
+<style>
+  .main-index {
+    padding: 40px 15%;
+  }
+
+  @media screen and (max-width: 768px)  {
+    
+  .main-index {
+  padding: 20px 15px;
+  }
+
+  }
+</style>
